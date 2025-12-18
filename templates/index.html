@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection Assistant</title>
+    <!-- Load Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external custom styles for animations and glass effects -->
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+
+<div class="w-full max-w-7xl glass-card p-4 md:p-8">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-6 md:mb-10 text-glow">
+        🧠 Brain Tumor Detection Assistant
+    </h1>
+
+    <!-- MAIN GRID LAYOUT: Vertically split on desktop, stacked on mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- COLUMN 1: DETECTION PANEL -->
+        <div class="upload-panel space-y-4 p-5 glass-card bg-white/15 flex flex-col h-full transition duration-500 hover:shadow-2xl">
+            <h2 class="text-2xl font-semibold mb-4 border-b border-white/50 pb-2">Image Analysis</h2>
+            
+            <!-- Image Upload and Preview -->
+            <div class="flex flex-col items-center space-y-4">
+                <div class="w-full rounded-xl p-3 bg-gray-900/30 shadow-inner">
+                    <input type="file" id="imageUpload" accept="image/*" class="w-full text-sm text-white/90 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-pink-500 hover:file:bg-pink-400 file:text-white transition duration-300">
+                </div>
+                
+                <!-- Image Preview Area -->
+                <div id="imagePreviewContainer" class="w-full h-64 bg-gray-900/60 flex justify-center items-center rounded-lg border-2 border-dashed border-white/70 overflow-hidden shadow-lg">
+                    <img id="imagePreview" src="https://placehold.co/400x256/334155/ffffff?text=Upload+MRI+Scan" alt="MRI Preview" class="max-h-full max-w-full object-contain hidden transition duration-300">
+                    <span id="previewPlaceholder" class="text-white/70 text-lg">Upload MRI Scan Here</span>
+                </div>
+
+                <!-- Detection Button with vibrant gradient -->
+                <button onclick="predictTumor()" id="predictButton" class="w-full py-3 rounded-xl font-extrabold transition duration-300 transform hover:scale-[1.01] shadow-2xl 
+                    bg-gradient-to-r from-cyan-400 to-indigo-500 hover:from-cyan-500 hover:to-indigo-600 text-white">
+                    Detect Tumor
+                </button>
+            </div>
+            
+            <!-- Prediction Result (Larger, more dramatic) -->
+            <div class="upload-box bg-white/20 p-4 rounded-xl mt-4 shadow-xl border border-white/30">
+                <p id="prediction" class="text-2xl font-extrabold text-yellow-300/90 text-glow">
+                    Awaiting Analysis...
+                </p>
+            </div>
+            
+            <!-- Custom Message Box for Errors/Notifications -->
+            <div id="messageBox" class="text-sm p-3 bg-red-500/50 text-white rounded-lg hidden transition duration-300"></div>
+        </div>
+        
+        <!-- COLUMN 2: CHATBOT PANEL -->
+        <div class="chat-panel space-y-4 p-5 glass-card bg-white/10 flex flex-col h-[500px] md:h-auto transition duration-500 hover:shadow-2xl">
+            <h2 class="text-2xl font-semibold mb-4 border-b border-white/50 pb-2">Medical Assistant Chat</h2>
+            
+            <div id="chatHistory" class="flex-grow overflow-y-auto p-3 bg-gray-900/20 rounded-lg shadow-inner flex flex-col space-y-3 mb-4">
+                <!-- Initial Bot Message -->
+                <div class="message-row bot-message-row flex justify-start">
+                    <div class="chat-bubble bg-green-400 text-gray-900 p-3 rounded-xl max-w-[80%] shadow-lg">
+                        Hello! I can help analyze your MRI and answer general questions about brain health. How can I assist?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area flex space-x-2">
+                <input type="text" id="userMessage" placeholder="Ask about symptoms or next steps..." class="flex-grow p-3 rounded-xl border-none text-gray-900 bg-white/90 focus:outline-none focus:ring-4 focus:ring-yellow-400 transition duration-300">
+                <!-- Send Button with vibrant gradient -->
+                <button onclick="sendMessage()" class="py-3 px-6 rounded-xl font-bold transition duration-300 transform hover:scale-[1.05] shadow-xl 
+                    bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Link to external JavaScript file -->
+<script src="static\script.js"></script>
+</body>
+</html>
