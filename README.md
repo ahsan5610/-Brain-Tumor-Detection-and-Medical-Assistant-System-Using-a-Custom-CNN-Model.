@@ -74,7 +74,7 @@ The model was trained for 24 epochs and these are the loss & accuracy plots:
 ![Accuracy plot](Accuracy.PNG)
 
 The best validation accuracy was achieved on the 23rd iteration.
-
+![front END] (fornt.bmp)
 # Results
 
 Now, the best model (the one with the best validation accuracy) detects brain tumor with:<br>
