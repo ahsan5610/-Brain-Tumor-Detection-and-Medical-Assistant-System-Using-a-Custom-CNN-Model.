@@ -102,7 +102,7 @@ What's in the files?
 
 ```
 from tensorflow.keras.models import load_model
-best_model = load_model(filepath='models/cnn-parameters-improvement-23-0.91.model')
+best_model = load_model(filepath='models/cnn-parameters-improvement-10-0.88.keras')
 ```
 
 4. The original data in the folders named 'yes' and 'no'. And, the augmented data in the folder named 'augmented data'.
@@ -110,6 +110,7 @@ best_model = load_model(filepath='models/cnn-parameters-improvement-23-0.91.mode
 
 Contributes are welcome!
 <br>Thank you!
-
+# Ahsan Tareen
+03368276991
 
 
