@@ -111,6 +111,6 @@ best_model = load_model(filepath='models/cnn-parameters-improvement-10-0.88.kera
 Contributes are welcome!
 <br>Thank you!
 # Ahsan Tareen
-03368276991
+ahsankhantareen56510@gmail.com
 
 
