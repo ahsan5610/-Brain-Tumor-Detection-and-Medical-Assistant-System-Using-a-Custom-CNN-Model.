@@ -1,0 +1,63 @@
+/* style.css */
+
+/* Import Font Awesome for Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/* Base styles for a more vibrant, animated background */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Energetic purple-to-cyan gradient */
+    background: linear-gradient(120deg, #9333ea, #06b6d4); 
+    background-size: 200% 200%;
+    animation: gradientBG 20s ease infinite; /* Slower, subtle animation */
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Enhanced Glass Card Styling for Depth */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15); /* Slightly less transparent */
+    backdrop-filter: blur(12px); /* Stronger blur for better separation */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden; 
+    transition: all 0.3s ease;
+}
+.glass-card:hover {
+    box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Text Glow Effect for Titles/Results */
+.text-glow {
+    /* Updated glow colors for vibrancy */
+    text-shadow: 0 0 7px #fff, 0 0 20px #fcd34d; 
+}
+
+/* Chat bubble alignment classes (referenced by JS) */
+.user-message-row { justify-content: flex-end; }
+.bot-message-row { justify-content: flex-start; }
+
+/* Loading Spinner Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.loader {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #f59e0b; /* amber-500 */
+  animation: spin 1s ease-in-out infinite;
+}
